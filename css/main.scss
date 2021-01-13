@@ -99,13 +99,14 @@
     
     
             li {
-    
+                position: relative;
+
                 label {
                     background-color: #7c8e51;
                     height: 40px;
     
                     display: grid;
-                    grid-template-columns: 85% 15%;            
+                    grid-template-columns: 85% 15%;
                     align-content: center;
                     align-items: center;
                     justify-items: left; 
@@ -122,6 +123,17 @@
                     input {
                         display: none;
                     }
+
+                }
+
+                div {
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../img/x.svg);                
                 }
             }
     
@@ -133,13 +145,15 @@
             font-family: 'Marmelad', sans-serif;
     
             li {
-    
+                position: relative;
+
+
                 label {
                     background-color: #6b7478;
                     height: 40px;
     
                     display: grid;
-                    grid-template-columns: 85% 15%;            
+                    grid-template-columns: 85% 15%;
                     align-content: center;
                     align-items: center;
                     justify-items: left; 
@@ -160,6 +174,17 @@
                     input {
                         display: none;
                     }
+
+                }
+
+                div {
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    transform: translateY(-50%);
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../img/x.svg);                
                 }
             }
         }

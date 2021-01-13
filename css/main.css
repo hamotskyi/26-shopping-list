@@ -104,6 +104,10 @@
   font-family: 'Marmelad', sans-serif;
 }
 
+#shoppinglist-bg #ulWrapper #ul li {
+  position: relative;
+}
+
 #shoppinglist-bg #ulWrapper #ul li label {
   background-color: #7c8e51;
   height: 40px;
@@ -133,10 +137,25 @@
   display: none;
 }
 
+#shoppinglist-bg #ulWrapper #ul li div {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/x.svg);
+}
+
 #shoppinglist-bg #ulWrapper #ulDone {
   padding: 0;
   list-style: none;
   font-family: 'Marmelad', sans-serif;
+}
+
+#shoppinglist-bg #ulWrapper #ulDone li {
+  position: relative;
 }
 
 #shoppinglist-bg #ulWrapper #ulDone li label {
@@ -170,5 +189,16 @@
 
 #shoppinglist-bg #ulWrapper #ulDone li label input {
   display: none;
+}
+
+#shoppinglist-bg #ulWrapper #ulDone li div {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/x.svg);
 }
 /*# sourceMappingURL=main.css.map */
