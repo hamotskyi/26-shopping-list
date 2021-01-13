@@ -1,0 +1,167 @@
+#shoppinglist-body {
+    background-color: #cfd9ce;
+}
+
+#shoppinglist-bg {
+    width: 70%;
+    min-width: 400px;
+    min-height: 80%;
+    margin-bottom: 10%;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    background-color: #384d47;
+   
+    #whatYouNeed {
+        position: absolute;
+        color: #384d47;
+        font-family: 'Russo One', sans-serif;
+        font-size: 40pt;
+        top: -103px;
+    }
+
+    #inputButtonWrapper {
+        position: absolute;
+        top: 17px;
+        left: 2%;
+        width: 96%;
+        height: 60px;
+        display: grid;
+        grid-template-columns: 75% 25%;
+
+
+
+        #inputArticle {
+            width: 100%;
+            height: 100%;
+            background-color: #cfd9ce;
+            border: none;
+            color:#414141;
+            font-family: 'Marmelad', sans-serif;
+            font-size: 45px;
+            padding: 0;
+            padding-left: 8px;
+            margin: 0;
+        
+            &:focus {
+                outline: none;
+            }  
+
+        }    
+
+        #addButton {
+            display: grid;
+            align-items: center;
+            justify-items: center;    
+            width: 100%;
+            height: 100%;
+            background-color: #6b7478;
+            font-size: 20px;
+            font-family: 'Marmelad', sans-serif;
+            text-transform: uppercase;
+            color: #cfd9ce;
+            cursor: pointer;
+            transition: ease-in-out .1s;
+
+        
+            &:active {
+                transform: scale(.95);
+            }
+        
+            &:focus {
+                outline: none;
+            }
+
+        }
+
+    }
+    
+    #ulWrapper {
+        width: 96%;
+        margin-top: 94px;
+        margin-left: 2%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        div {
+            font-family: 'Russo One', sans-serif;
+            font-size: 16pt;
+            height: 30px;
+            letter-spacing: 4px;
+            color: #cfd9ce;
+        }
+
+        #ul {
+            padding: 0;
+            list-style: none;
+            font-family: 'Marmelad', sans-serif;
+    
+    
+            li {
+    
+                label {
+                    background-color: #7c8e51;
+                    height: 40px;
+    
+                    display: grid;
+                    grid-template-columns: 85% 15%;            
+                    align-content: center;
+                    align-items: center;
+                    justify-items: left; 
+                    padding-left: 10px;
+                    box-sizing: border-box;
+    
+                    p {
+                        font-size: 20pt;
+                        line-height: 1;
+                        font-family: 'Marmelad', sans-serif;
+                        color: #cfd9ce;
+                    }
+    
+                    input {
+                        display: none;
+                    }
+                }
+            }
+    
+        }
+        
+        #ulDone {
+            padding: 0;
+            list-style: none;
+            font-family: 'Marmelad', sans-serif;
+    
+            li {
+    
+                label {
+                    background-color: #6b7478;
+                    height: 40px;
+    
+                    display: grid;
+                    grid-template-columns: 85% 15%;            
+                    align-content: center;
+                    align-items: center;
+                    justify-items: left; 
+                    padding-left: 10px;
+                    box-sizing: border-box;
+    
+                    p {
+                        font-size: 20pt;
+                        line-height: 1;
+                        font-family: 'Marmelad', sans-serif;
+                        color: #414141;
+
+                        &:first-child {
+                            text-decoration: line-through;
+                        }
+                    }
+    
+                    input {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

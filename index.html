@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../fonts/Monaco.ttf">
+    <link rel="stylesheet" href="../fonts/Menlo.ttf">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
+    <title>&lt;списокПокупок &#47;&gt;</title>
+</head>
+<body id="shoppinglist-body">
+    <div class="shoppinglist-bg" id="shoppinglist-bg">
+        
+        <p id="whatYouNeed">
+            Список покупок
+        </p>
+
+        <div id="inputButtonWrapper">
+
+            <input type="text" name="" id="inputArticle">     
+
+            <div id="addButton" onclick="addNewProduct()">
+            додати
+            </div> 
+
+        </div>   
+
+        <div id="ulWrapper">
+
+            <div>Купити:</div>
+            <div>Куплено:</div>
+
+            <ul id="ul"></ul>
+            <ul id="ulDone"></ul>
+
+        </div>
+    </div>
+    <script src="../js/shoppinglist.js"></script>
+</body>
+</html>
