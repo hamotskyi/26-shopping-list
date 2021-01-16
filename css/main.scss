@@ -44,6 +44,11 @@
             padding-left: 8px;
             margin: 0;
         
+            &::placeholder {
+                color: #41414183;
+                font-size: 24px;
+                transform: translateY(-9px);
+            }
             &:focus {
                 outline: none;
             }  

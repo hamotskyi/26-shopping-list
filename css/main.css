@@ -48,6 +48,32 @@
   margin: 0;
 }
 
+#shoppinglist-bg #inputButtonWrapper #inputArticle::-webkit-input-placeholder {
+  color: #41414183;
+  font-size: 24px;
+  -webkit-transform: translateY(-9px);
+          transform: translateY(-9px);
+}
+
+#shoppinglist-bg #inputButtonWrapper #inputArticle:-ms-input-placeholder {
+  color: #41414183;
+  font-size: 24px;
+  transform: translateY(-9px);
+}
+
+#shoppinglist-bg #inputButtonWrapper #inputArticle::-ms-input-placeholder {
+  color: #41414183;
+  font-size: 24px;
+  transform: translateY(-9px);
+}
+
+#shoppinglist-bg #inputButtonWrapper #inputArticle::placeholder {
+  color: #41414183;
+  font-size: 24px;
+  -webkit-transform: translateY(-9px);
+          transform: translateY(-9px);
+}
+
 #shoppinglist-bg #inputButtonWrapper #inputArticle:focus {
   outline: none;
 }
