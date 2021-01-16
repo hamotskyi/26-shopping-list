@@ -134,7 +134,7 @@
   position: relative;
 }
 
-#shoppinglist-bg #ulWrapper #ul li:hover div {
+#shoppinglist-bg #ulWrapper #ul li:hover .divX {
   opacity: 1;
 }
 
@@ -143,6 +143,8 @@
   height: 40px;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 60% 8% 16% 8% 8%;
+      grid-template-columns: 60% 8% 16% 8% 8%;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: center;
@@ -161,20 +163,46 @@
   color: #cfd9ce;
 }
 
+#shoppinglist-bg #ulWrapper #ul li label p:nth-child(2) {
+  font-size: 18pt;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+}
+
 #shoppinglist-bg #ulWrapper #ul li label input {
   display: none;
 }
 
-#shoppinglist-bg #ulWrapper #ul li div {
-  opacity: 0;
+#shoppinglist-bg #ulWrapper #ul li .divX {
   position: absolute;
-  top: 50%;
-  right: 10px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  background-image: url(../img/x.svg);
+  top: 10%;
+  right: 1%;
+  width: 32px;
+  height: 32px;
+  background-image: url(../img/plus.svg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-size: cover;
+}
+
+#shoppinglist-bg #ulWrapper #ul li .divMinus {
+  position: absolute;
+  top: 11%;
+  right: 36%;
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/minus.svg);
+}
+
+#shoppinglist-bg #ulWrapper #ul li .divPlus {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 25px;
+  height: 25px;
+  background-image: url(../img/plus.svg);
+  background-size: cover;
 }
 
 #shoppinglist-bg #ulWrapper #ulDone {
