@@ -19,7 +19,7 @@ function addNewProduct() {
     if (inputArticle == "") {
 
         let placeholder = document.createAttribute("placeholder");
-        placeholder.value = "Введіть назву продукту";
+        placeholder.value = "Вкажи назву продукту";
         inp.setAttributeNode(placeholder);
         inp.value = "";
         inp.focus();
@@ -43,9 +43,10 @@ function addNewProduct() {
             let quant = shoppingList[0].quantity;
             let textQuantity = document.createTextNode(`x ${quant}`);
             let textName = document.createTextNode(`${name}`);
-            let divX = document.createElement("div");//
-            let attOnclick = document.createAttribute("onclick");//
-            let attIdForDivX = document.createAttribute("id");//
+            let divX = document.createElement("div");
+            let attOnclick = document.createAttribute("onclick");
+            let attIdForDivX = document.createAttribute("id");
+            let placeholder = document.createAttribute("placeholder");
             attType.value = "checkbox";
             attIdForInp.value = `check${shoppingList.length - 1}`;
             attFor.value = attIdForInp.value;
@@ -53,14 +54,14 @@ function addNewProduct() {
             attOnchange.value = "productFilter(this)";
             ul.appendChild(li);
             li.appendChild(label);
-            li.appendChild(divX);//
+            li.appendChild(divX);
             label.appendChild(pName);
             label.appendChild(pQuantity);
             label.appendChild(inputCheck);
-            attOnclick.value = "deleteListItem(this)";//
-            attIdForDivX.value = shoppingList.length - 1;//
-            divX.setAttributeNode(attOnclick);//
-            divX.setAttributeNode(attIdForDivX);//
+            attOnclick.value = "deleteListItem(this)";
+            attIdForDivX.value = shoppingList.length - 1;
+            divX.setAttributeNode(attOnclick);
+            divX.setAttributeNode(attIdForDivX);
             pName.appendChild(textName);
             pQuantity.appendChild(textQuantity);
             inputCheck.setAttributeNode(attType);
@@ -69,6 +70,8 @@ function addNewProduct() {
             label.setAttributeNode(attFor);
             pQuantity.setAttributeNode(attIdForP);
 
+            placeholder.value = "Додай ще щось до списку";
+            inp.setAttributeNode(placeholder);
             inp.value = "";
             inp.focus();
 
@@ -95,21 +98,22 @@ function addNewProduct() {
                 let quant = shoppingList[shoppingList.length - 1].quantity;
                 let textQuantity = document.createTextNode(`x ${quant}`);
                 let textName = document.createTextNode(`${name}`);
-                let divX = document.createElement("div");//
-                let attOnclick = document.createAttribute("onclick");//
-                let attIdForDivX = document.createAttribute("id");//
+                let divX = document.createElement("div");
+                let attOnclick = document.createAttribute("onclick");
+                let attIdForDivX = document.createAttribute("id");
+                let placeholder = document.createAttribute("placeholder");
                 attType.value = "checkbox";
                 attIdForInp.value = `check${shoppingList.length - 1}`;
                 attFor.value = attIdForInp.value;
                 attIdForP.value = `qt${shoppingList.length - 1}`;
                 attOnchange.value = "productFilter(this)";
-                attOnclick.value = "deleteListItem(this)";//
-                attIdForDivX.value = shoppingList.length - 1;//
-                divX.setAttributeNode(attOnclick);//
-                divX.setAttributeNode(attIdForDivX);//
+                attOnclick.value = "deleteListItem(this)";
+                attIdForDivX.value = shoppingList.length - 1;
+                divX.setAttributeNode(attOnclick);
+                divX.setAttributeNode(attIdForDivX);
                 ul.appendChild(li);
                 li.appendChild(label);
-                li.appendChild(divX);//
+                li.appendChild(divX);
                 label.appendChild(pName);
                 label.appendChild(pQuantity);
                 label.appendChild(inputCheck);
@@ -121,6 +125,8 @@ function addNewProduct() {
                 label.setAttributeNode(attFor);
                 pQuantity.setAttributeNode(attIdForP);
 
+                placeholder.value = "Додай ще щось до списку";
+                inp.setAttributeNode(placeholder);
                 inp.value = "";
                 inp.focus();
 
@@ -131,9 +137,14 @@ function addNewProduct() {
                 let pQ = document.getElementById(`qt${index}`);
                 let quant = shoppingList[index].quantity;
                 let textQuantity = document.createTextNode(`x ${quant}`);
+                let placeholder = document.createAttribute("placeholder");
+
                 pQ.removeChild(pQ.firstChild);
                 pQ.appendChild(textQuantity);
-
+                placeholder.value = "Додай ще щось до списку";
+                inp.setAttributeNode(placeholder);
+                inp.value = "";
+                inp.focus();
             }
 
         }
