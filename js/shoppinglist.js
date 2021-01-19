@@ -1,6 +1,7 @@
 let shoppingList = [];
 let ul = document.getElementById('ul');
 let ulDone =  document.getElementById('ulDone');
+let inp = document.getElementById('inputArticle');
 
 class Product {
     constructor (title) {
@@ -9,10 +10,13 @@ class Product {
     }
 }
 
+inp.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {addNewProduct()}
+});
+
 function addNewProduct() {
 
-    let inp = document.getElementById('inputArticle');
-    let rowInputData = document.getElementById('inputArticle').value;
+    let rowInputData = inp.value;
     let inputArticle = rowInputData.trim();
     let newProduct = new Product(inputArticle);
     
