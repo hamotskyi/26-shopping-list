@@ -79,17 +79,22 @@ function addNewProduct() {
 
             let divMinus = document.createElement("div");
             let attClassForMinus = document.createAttribute("class");
+            let attOnclickForMinus = document.createAttribute("onclick");
             divMinus.setAttributeNode(attClassForMinus);
+            divMinus.setAttributeNode(attOnclickForMinus);
             attClassForMinus.value = 'divMinus';
+            attOnclickForMinus.value = 'minusItemQuantity(this)';
 
             let divPlus = document.createElement("div");
             let attClassForPlus = document.createAttribute("class");
+            let attOnclickForPlus = document.createAttribute("onclick");
+            divPlus.setAttributeNode(attOnclickForPlus);
             divPlus.setAttributeNode(attClassForPlus);
             attClassForPlus.value = 'divPlus';
+            attOnclickForPlus.value = 'plusItemQuantity(this)';
 
             li.appendChild(divMinus);
             li.appendChild(divPlus);
-
 
         } else {
 
@@ -116,7 +121,7 @@ function addNewProduct() {
                 let textName = document.createTextNode(`${name}`);
                 let divX = document.createElement("div");
                 let attOnclickForX = document.createAttribute("onclick");
-            let attIdForDivX = document.createAttribute("id");
+                let attClassForX = document.createAttribute("class");
                 let attIdForLi = document.createAttribute("id");
                 let placeholder = document.createAttribute("placeholder");
                 attType.value = "checkbox";
@@ -126,7 +131,9 @@ function addNewProduct() {
                 attOnchange.value = "productFilter(this)";
                 attOnclickForX.value = "deleteListItem(this)";
                 attIdForLi.value = shoppingList.length - 1;
+                attClassForX.value = 'divX';
                 divX.setAttributeNode(attOnclickForX);
+                divX.setAttributeNode(attClassForX);
                 li.setAttributeNode(attIdForLi);
                 ul.appendChild(li);
                 li.appendChild(label);
@@ -146,6 +153,25 @@ function addNewProduct() {
                 inp.value = "";
                 inp.focus();
 
+                let divMinus = document.createElement("div");
+                let attClassForMinus = document.createAttribute("class");
+                let attOnclickForMinus = document.createAttribute("onclick");
+                divMinus.setAttributeNode(attClassForMinus);
+                divMinus.setAttributeNode(attOnclickForMinus);
+                attClassForMinus.value = 'divMinus';
+                attOnclickForMinus.value = 'minusItemQuantity(this)';
+
+    
+                let divPlus = document.createElement("div");
+                let attClassForPlus = document.createAttribute("class");
+                let attOnclickForPlus = document.createAttribute("onclick");
+                divPlus.setAttributeNode(attOnclickForPlus);
+                divPlus.setAttributeNode(attClassForPlus);
+                attClassForPlus.value = 'divPlus';
+                attOnclickForPlus.value = 'plusItemQuantity(this)';
+
+                li.appendChild(divMinus);
+                li.appendChild(divPlus);
 
             } else if (shoppingList[index].quantity == 0) {
 
@@ -166,7 +192,7 @@ function addNewProduct() {
                 let textName = document.createTextNode(`${name}`);
                 let divX = document.createElement("div");
                 let attOnclickForX = document.createAttribute("onclick");
-            let attIdForDivX = document.createAttribute("id");
+                let attClassForX = document.createAttribute("class");
                 let attIdForLi = document.createAttribute("id");
                 let placeholder = document.createAttribute("placeholder");
                 attType.value = "checkbox";
@@ -176,7 +202,9 @@ function addNewProduct() {
                 attOnchange.value = "productFilter(this)";
                 attOnclickForX.value = "deleteListItem(this)";
                 attIdForLi.value = index;
+                attClassForX.value = 'divX';
                 divX.setAttributeNode(attOnclickForX);
+                divX.setAttributeNode(attClassForX);
                 li.setAttributeNode(attIdForLi);
                 ul.appendChild(li);
                 li.appendChild(label);
@@ -196,6 +224,25 @@ function addNewProduct() {
                 inp.value = "";
                 inp.focus();
 
+                let divMinus = document.createElement("div");
+                let attClassForMinus = document.createAttribute("class");
+                let attOnclickForMinus = document.createAttribute("onclick");
+                divMinus.setAttributeNode(attClassForMinus);
+                divMinus.setAttributeNode(attOnclickForMinus);
+                attClassForMinus.value = 'divMinus';
+                attOnclickForMinus.value = 'minusItemQuantity(this)';
+    
+                let divPlus = document.createElement("div");
+                let attClassForPlus = document.createAttribute("class");
+                let attOnclickForPlus = document.createAttribute("onclick");
+                divPlus.setAttributeNode(attOnclickForPlus);
+                divPlus.setAttributeNode(attClassForPlus);
+                attClassForPlus.value = 'divPlus';
+                attOnclickForPlus.value = 'plusItemQuantity(this)';
+    
+                li.appendChild(divMinus);
+                li.appendChild(divPlus);
+
             } else {
 
                 shoppingList[index].quantity++;
@@ -209,6 +256,11 @@ function addNewProduct() {
                 inp.setAttributeNode(placeholder);
                 inp.value = "";
                 inp.focus();
+
+                let styleOpacity = document.createAttribute("style");
+                pQ.setAttributeNode(styleOpacity);
+                styleOpacity.value = 'opacity:1;';
+                
             }
 
         }
@@ -239,3 +291,57 @@ function deleteListItem(y) {
     shoppingList[index].quantity = 0;
     
 };
+
+function plusItemQuantity(z) {
+
+    let liParent = z.parentNode;
+    let index = liParent.id;
+    shoppingList[index].quantity++;
+    let pQ = document.getElementById(`qt${index}`);
+    let quant = shoppingList[index].quantity;
+    let textQuantity = document.createTextNode(`x ${quant}`);
+    pQ.removeChild(pQ.firstChild);
+    pQ.appendChild(textQuantity);
+    let styleOpacity = document.createAttribute("style");
+    pQ.setAttributeNode(styleOpacity);
+    styleOpacity.value = 'opacity:1;';
+
+};
+
+function minusItemQuantity(m) {
+    
+    let liParent = m.parentNode;
+    let index = liParent.id;
+
+    if (shoppingList[index].quantity == 1) {
+        
+        liParent.remove();
+        shoppingList[index].quantity = 0;
+    
+    } else if (shoppingList[index].quantity == 2) {
+    
+        shoppingList[index].quantity = 1;
+        let pQ = document.getElementById(`qt${index}`);
+        let quant = shoppingList[index].quantity;
+        let textQuantity = document.createTextNode(`x ${quant}`);
+        pQ.removeChild(pQ.firstChild);
+        pQ.appendChild(textQuantity);
+        let styleOpacity = document.createAttribute("style");
+        pQ.setAttributeNode(styleOpacity);
+        styleOpacity.value = 'opacity:auto;';
+
+    } else if (shoppingList[index].quantity > 2) {
+
+        shoppingList[index].quantity -= 1;
+        let pQ = document.getElementById(`qt${index}`);
+        let quant = shoppingList[index].quantity;
+        let textQuantity = document.createTextNode(`x ${quant}`);
+        pQ.removeChild(pQ.firstChild);
+        pQ.appendChild(textQuantity);
+        let styleOpacity = document.createAttribute("style");
+        pQ.setAttributeNode(styleOpacity);
+        styleOpacity.value = 'opacity:1;';
+
+    }
+
+}

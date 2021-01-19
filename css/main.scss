@@ -107,8 +107,24 @@
 
                 &:hover {
 
+                    label {
+                        p {
+                            &:nth-child(2) {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
                     .divX {
-                        opacity: 1;
+                        opacity: .2;
+                    }
+                    
+                    .divMinus {
+                        opacity: .15;
+                    }
+                    
+                    .divPlus {
+                        opacity: .15;
                     }
                 }
 
@@ -122,6 +138,7 @@
                     justify-items: left; 
                     padding-left: 10px;
                     box-sizing: border-box;
+                    cursor: pointer;
     
                     p {
                         font-size: 20pt;
@@ -133,6 +150,8 @@
                             font-size: 18pt;
                             grid-column-start: 3;
                             grid-column-end: 4;
+                            opacity: 0;
+                            transition: ease-in .1s;
                         }
                     }
     
@@ -143,40 +162,61 @@
                 }
 
                 .divX {
-                    // opacity: 0;
+                    opacity: 0;
                     position: absolute;
                     top: 10%;
                     right: 1%;
-                    // transform: translateY(-50%);
                     width: 32px;
                     height: 32px;
                     background-image: url(../img/plus.svg);  
-                    transform: rotate(45deg);   
-                    background-size: cover;             
-           
+                    transform: rotate(45deg) scale(.8);   
+                    background-size: cover;    
+                    transition: ease-in .1s;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        opacity: 1;
+                        transform: rotate(135deg) scale(1);   
+                    }
                 }
 
                 .divMinus {
-                    // opacity: 0;
+                    opacity: 0;
                     position: absolute;
-                    top: 11%;
+                    top: 15%;
                     right: 36%;
-                    // transform: translateY(-50%);                    
                     width: 25px;
                     height: 25px;
-                    background-image: url(../img/minus.svg);                
+                    background-image: url(../img/minus.svg);    
+                    transition: ease-in .1s;
+                    transform: scale(.8);  
+                    cursor: pointer; 
+
+                    
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
                 }
 
                 .divPlus {
-                    // opacity: 0;
+                    opacity: 0;
                     position: absolute;
-                    top: 15%;
-                    right: 10%;
-                    // transform: translateY(-50%);
+                    top: 16%;
+                    right: 12%;
                     width: 25px;
                     height: 25px;
                     background-image: url(../img/plus.svg);   
-                    background-size: cover;             
+                    background-size: cover;    
+                    transition: ease-in .1s;
+                    transform: scale(.8); 
+                    cursor: pointer;  
+
+                    
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
                 }
             }
     
@@ -190,27 +230,42 @@
             li {
                 position: relative;
 
+                &:hover {
+
+                    .divX {
+                        opacity: .1;
+                    }
+
+                }
+
 
                 label {
                     background-color: #6b7478;
                     height: 40px;
-    
                     display: grid;
-                    grid-template-columns: 85% 15%;
+                    grid-template-columns: 60% 8% 16% 8% 8%;
                     align-content: center;
                     align-items: center;
                     justify-items: left; 
                     padding-left: 10px;
                     box-sizing: border-box;
+                    cursor: pointer;            
     
                     p {
                         font-size: 20pt;
                         line-height: 1;
                         font-family: 'Marmelad', sans-serif;
                         color: #414141;
+                        text-decoration: line-through;
 
-                        &:first-child {
-                            text-decoration: line-through;
+                        &:nth-child(2) {
+
+                            display: none;
+                            font-size: 18pt;
+                            grid-column-start: 3;
+                            grid-column-end: 4;
+                            opacity: 0;
+                            transition: ease-in .1s;
                         }
                     }
     
@@ -220,14 +275,47 @@
 
                 }
 
-                div {
+                .divX {
+                    opacity: 0;
                     position: absolute;
-                    top: 50%;
-                    right: 10px;
-                    transform: translateY(-50%);
-                    width: 16px;
-                    height: 16px;
-                    background-image: url(../img/x.svg);                
+                    top: 10%;
+                    right: 1%;
+                    width: 32px;
+                    height: 32px;
+                    background-image: url(../img/plus.svg);  
+                    transform: rotate(45deg) scale(.8);   
+                    background-size: cover;    
+                    transition: ease-in .1s;
+                    cursor: pointer;            
+                    
+                    &:hover {
+                        opacity: .75;
+                        transform: rotate(135deg) scale(1);   
+
+                    }
+                }
+
+                .divMinus {
+                    display: none;
+                    opacity: 0;
+                    position: absolute;
+                    top: 15%;
+                    right: 36%;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../img/minus.svg);                
+                }
+
+                .divPlus {
+                    display: none;
+                    opacity: 0;
+                    position: absolute;
+                    top: 16%;
+                    right: 12%;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url(../img/plus.svg);   
+                    background-size: cover;             
                 }
             }
         }
